@@ -4,6 +4,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 class MyRegistrationForm(UserCreationForm):
+    def __init__(self,*args,**kargs):
+        super(MyRegistrationForm,self).__init__(*args,**kargs)
+        self.fields['username'].widget.attrs = {'class': 'form-control',}
+        self.fields['email'].widget.attrs = {'class': 'form-control',}
+        self.fields['password1'].widget.attrs = {'class': 'form-control',}
+        self.fields['password2'].widget.attrs = {'class': 'form-control',}
+        
+
     ## adding the Email portion
     ## its not n the user model
     ## you can add more

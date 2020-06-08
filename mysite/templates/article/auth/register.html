@@ -1,0 +1,14 @@
+{% extends 'article/base/base.html' %}
+{% load static %}
+{% block content %}
+
+<h2> Register </h2>
+<div class="form-group">
+<form action ="/accounts/register/" method="POST">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Register">
+</form>
+</div>
+
+{% endblock %}
